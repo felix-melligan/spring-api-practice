@@ -1,0 +1,14 @@
+language: java
+jdk: oraclejdk11
+
+script:
+  - echo "Travis branch is $TRAVIS_BRANCH"
+  - echo "Travis branch is in pull request $TRAVIS_PULL"
+  - mvn test -B
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+cache:
+  directories:
+    - $HOME/.m2
