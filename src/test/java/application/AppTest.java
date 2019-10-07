@@ -2,11 +2,14 @@ package application;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-
 public class AppTest {
+    String[] args = {"Hello", "World"};
+
     @Test
     public void shouldRunTest() {
-        assertEquals(7, 4+3);
+        args = new String[0];
+        App app = new App();
+
+        app.main(args);
     }
 }
